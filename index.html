@@ -1,432 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abhijeet Mishra Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abhijeet Mishra portfolio for cybersecurity engineering, Python development, AI projects, SOC analysis, internships, certifications, and contact.">
+  <meta name="keywords" content="Abhijeet Mishra, Cybersecurity Engineer, Python Developer, SOC Analyst, AI Enthusiast, Portfolio">
+  <meta name="author" content="Abhijeet Mishra">
+  <meta property="og:title" content="Abhijeet Mishra | Cybersecurity Engineer">
+  <meta property="og:description" content="Cybersecurity, Python, AI, SOC monitoring, and endpoint security portfolio.">
+  <meta property="og:type" content="website">
+  <title>Abhijeet Mishra | Cybersecurity Engineer</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- CUSTOM CURSOR DRONE -->
-  <div class="cursor-drone"></div>
+  <div class="loader" aria-hidden="true">
+    <div class="loader-core"></div>
+    <span>Initializing secure workspace</span>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="mouse-spotlight" aria-hidden="true"></div>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <h2 class="logo">Abhijeet Mishra.</h2>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="#hero">Abhijeet<span>Mishra</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#internships">Internship</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#featured">Cyber Sentinel</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#posters">Posters</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="theme-swatch cyan active" type="button" data-theme="cyan" aria-label="Cyan theme"></button>
+        <button class="theme-swatch violet" type="button" data-theme="violet" aria-label="Violet theme"></button>
+        <button class="dark-toggle" type="button" aria-label="Toggle dark mode">Mode</button>
+      </div>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-background">
-      <div class="code-snippet code-1">
-        <span class="code-line"><span class="keyword">const</span> <span class="variable">ai</span> = <span class="string">'intelligent'</span>;</span>
-        <span class="code-line"><span class="keyword">function</span> <span class="function">compile</span>() {</span>
-        <span class="code-line">  <span class="keyword">return</span> <span class="string">'success'</span>;</span>
-        <span class="code-line">}</span>
+  <main>
+    <section class="hero section-shell" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="grid-scan"></div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="floating-code code-a">alert.severity == "critical"</div>
+        <div class="floating-code code-b">python automate_response.py</div>
+        <div class="floating-code code-c">wazuh.events.filter()</div>
       </div>
-      <div class="code-snippet code-2">
-        <span class="code-line"><span class="keyword">class</span> <span class="class">Developer</span> {</span>
-        <span class="code-line">  <span class="function">build</span>() { <span class="comment">// AI-powered</span> }</span>
-        <span class="code-line">}</span>
-      </div>
-      <div class="code-snippet code-3">
-        <span class="code-line"><span class="operator">import</span> { <span class="variable">React</span> } <span class="operator">from</span> <span class="string">'react'</span>;</span>
-        <span class="code-line"><span class="operator">export</span> <span class="keyword">default</span> <span class="function">App</span>;</span>
-      </div>
-      <div class="code-snippet code-4">
-        <span class="code-line"><span class="keyword">if</span> (<span class="variable">ai</span>.<span class="function">thinking</span>()) {</span>
-        <span class="code-line">  <span class="variable">code</span>.<span class="function">compile</span>();</span>
-        <span class="code-line">}</span>
-      </div>
-      <div class="terminal-output">
-        <div class="terminal-line">$ npm run build</div>
-        <div class="terminal-line">✓ Compiled successfully</div>
-        <div class="terminal-line">✓ Optimized for production</div>
-      </div>
-      <div class="ai-particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-      </div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-image">
-        <img src="images/hero.png" alt="Abhijeet Mishra">
-      </div>
-      <div class="hero-text">
-        <h1>Hi, I'm <span>Abhijeet</span></h1>
-        <h3>System Software security, Python Development, and Visual Design.</h3>
-        <p>"Computer Science Student building real-world solutions through Python, AI/ML, Web Development and Cyber Security."</p>
 
-        <div class="hero-btns">
-          <a href="#projects" class="btn primary">View Projects</a>
-          <a href="abhijeet_resume.pdf" class="btn outline download-btn" download>
-            <span class="btn-text">Download Resume</span>
-            <span class="download-icon">⬇</span>
-          </a>
+      <div class="hero-content reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">CSE Engineer</p>
+          <h1>Abhijeet Mishra</h1>
+          <h2><span class="typing-text"></span><span class="typing-caret">|</span></h2>
+          <p class="hero-summary">
+            Computer Science student building practical systems across endpoint monitoring, SOC workflows,
+            Python automation, AI-assisted analysis, and secure cloud-ready applications.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn primary" href="abhijeet_resume.pdf" download>Download Resume</a>
+            <a class="btn secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="hero-portrait tilt-card">
+          <img src="assets/images/hero.png" alt="Professional portrait of Abhijeet Mishra" fetchpriority="high">
+          <div class="portrait-badge">Ready to Work</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section dark">
-    <h2>About Me</h2>
-    <p class="section-text">
-      Motivated and detail‑oriented Computer Science student with strong skills in Python, SQL, AI/ML, Data
-analysis, Networking and software system security. Seeking an entry‑level role to apply for technical abilities to solve real‑world
-problems and grow within a data‑driven organization.
-
-    </p>
-  </section>
-  <section id="internships" class="internship-section">
-  <h2 class="section-title">Internships</h2>
-  <p class="section-subtitle">
-    Practical experience gained by working with real-world projects and teams
-  </p>
-
-  <div class="internship-container">
-
-    <!-- Internship 1 -->
-    <div class="internship-card">
-      <h3>
-        <a href="images/csinternship.jpeg" target="_blank">
-          System & Software Security Intern
-        </a>
-      </h3>
-      <span class="company">NIELIT Government of India(Meity) · Onsite</span>
-      <span class="duration">Jan 2026-Present</span>
-
-      <ul>
-        <li>Worked on network security monitoring and intrusion detection using tools like Snort IDS/IPS to detect malicious traffic and policy violations.</li>
-        <li>Deployed and configured Cowrie SSH/Telnet Honeypot to capture real-world attack attempts and analyze attacker behavior.</li>
-        <li>Performed network scanning and vulnerability assessment using Nmap, identifying open ports, services, and potential attack surfaces.</li>
-      </ul>
-    </div>
-
-    <!-- Internship 2 -->
-    <div class="internship-card">
-      <h3>
-        <a href="images/csinternship.jpeg" target="_blank">
-          Python Developer Intern
-        </a>
-      </h3>
-      <span class="company">Coding Samurai · Remote</span>
-      <span class="duration">June 2025</span>
-
-      <ul>
-        <li>Automated data-processing workflows using Python, reducing manual effort by 40%</li>
-        <li>Collaborated with cross-functional teams to implement core Python functionalities</li>
-        <li>Performed code reviews, debugging, and documentation for developed modules</li>
-      </ul>
-    </div>
-
-    <!-- Internship 3  -->
-    <div class="internship-card">
-      <h3>
-        <a href="images/iaminternship.jpeg" target="_blank">
-          Visual Designer Intern
-        </a>
-      </h3>
-      <span class="company">InAmigos Foundation (IAF) · Remote</span>
-      <span class="duration">August 2025</span>
-
-      <ul>
-        <li>Designed 15+ visual assets for NGO campaigns and social media</li>
-        <li>Improved audience engagement by 25% through user-centric design</li>
-        <li>Maintained design consistency and brand guideline compliance</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- SKILLS -->
-  <section id="skills" class="section dark">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <img src="images/logos/html.png" alt="HTML" class="skill-logo">
+      <div class="stats-grid reveal">
+        <article class="stat-card">
+          <strong><span data-counter="8">0</span>+</strong>
+          <span>Projects</span>
+        </article>
+        <article class="stat-card">
+          <strong><span data-counter="3">0</span></strong>
+          <span>Internships</span>
+        </article>
+        <article class="stat-card">
+          <strong><span data-counter="15">0</span>+</strong>
+          <span>Certificates</span>
+        </article>
+        <article class="stat-card">
+          <strong><span data-counter="100">0</span>+</strong>
+          <span>Security Events Analysed</span>
+        </article>
       </div>
-      <div class="skill-card">
-        <img src="images/logos/css.png" alt="CSS" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/js.png" alt="JavaScript" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/canva.jpeg" alt="React" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/python.png" alt="Python" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/c.png" alt="Flutter" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/api.avif" alt="Firebase" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/GitHub-Logo.png" alt="Git" class="skill-logo">
-      </div>
-       <div class="skill-card">
-        <img src="images/logos/mysql.png" alt="Node.js" class="skill-logo">
-      </div>
-       <div class="skill-card">
-        <img src="images/logos/kali.jpg" alt="Node.js" class="skill-logo">
-      </div>
-       <div class="skill-card">
-        <img src="images/logos/nmap.jpg" alt="Node.js" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/wireshark.jpg" alt="Node.js" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/sql.png" alt="MongoDB" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/bi.png" alt="MongoDB" class="skill-logo">
-      </div>
-      <div class="skill-card">
-        <img src="images/logos/excel.png" alt="MongoDB" class="skill-logo">
-      </div>
-    </div>
-  </section>
+      <a class="scroll-indicator" href="#about" aria-label="Scroll to about section"></a>
+    </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-
-    <div class="grid">
-      <div class="project-card">
-        <h3>Weather App</h3>
-        <p>Python based Weather application Used to determine Current weather of particular location,Using openweathermap.org Api to get the weather details.</p>
-        <a href="https://github.com/abhim1411/CODING-SAMURAI-INTERNSHIP-TASK/tree/main/Task%201">View Project →</a>
+    <section class="section-shell about-section" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About</p>
+        <h2>Career Story</h2>
       </div>
-
-      <div class="project-card">
-        <h3>To-Do Manager App</h3>
-        <p>Python Based GUI To-Do List Application,A comprehensive task management system with tkinter GUI and file persistence.</p>
-        <a href="https://github.com/abhim1411/CODING-SAMURAI-INTERNSHIP-TASK/tree/main/Task%202">View Project →</a>
+      <div class="about-grid">
+        <div class="about-photo tilt-card reveal">
+          <img src="assets/images/hero2.png" alt="Abhijeet Mishra professional photograph" loading="lazy">
+        </div>
+        <div class="about-content reveal">
+          <p>
+          My career journey has been driven by curiosity and a passion for learning. I began by exploring visual design, where I developed creativity and an eye for user experience. As my interest in technology grew, I worked as a Python Developer Intern, strengthening my programming and problem-solving skills.
+          </p>
+          <p>
+          My internship at **NIELIT (Government of India)** introduced me to cybersecurity, where I gained practical experience in system security, network analysis, SIEM, and threat detection. These experiences gave me the confidence to explore different areas of technology and continuously expand my skill set. Currently, I am working as a **Software Developer Trainee at Chetu**, where I am gaining real-world software development experience and learning from industry professionals. I don't believe in limiting myself to a single path; instead, I aim to keep learning, embrace new challenges, and contribute wherever my skills can create meaningful impact.
+          </p>
+          <div class="timeline-mini">
+            <div><span>Now</span>Chetu training with enterprise delivery discipline</div>
+            <div><span>2026</span>Government cybersecurity internship and SOC practice</div>
+            <div><span>2026</span>Completed my College with Python automation and AI projects</div>
+            <div><span>2025</span>Remote internships in development and design</div>
+            <div><span>2022</span>Started my Btech in CSE From Raj Kumar Goel Institute Of Technology</div>
+            <div><span>2022</span>Completed my Schooling From Gorakhpur</div>
+          </div>
+        </div>
       </div>
-
-      <div class="project-card">
-        <h3>Lyrics Extractor using WebScraping</h3>
-        <p>Built a web scraping tool to extract song lyrics while handling anti-scraping mechanisms,Implemented text preprocessing and cleaning algorithms to handle noisy data and improve accuracy.</p>
-        <a href="#">View Project →</a>
+      <div class="specializations reveal">
+        <span>Cyber Security</span>
+        <span>Devops</span>
+        <span>Python</span>
+        <span>Data Analytics</span>
+        <span>Machine Learning</span>
+        <span>AI Automation</span>
+        <span>Cloud</span>
+        <span>Networking</span>
+        <span>Threat Intelligence</span>
       </div>
-    </div>
-  </section>
-  <section id="certifications" class="cert-section">
-  <h2 class="section-title">Certifications</h2>
-  <p class="section-subtitle">
-    Professional and Industry-recognized certifications showcasing my skills
-  </p>
+    </section>
 
-  <div class="cert-stack" id="certStack">
+    <section class="section-shell experience-section" id="experience">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>Professional Timeline</h2>
+      </div>
+      <div class="experience-timeline">
+        <article class="experience-item reveal">
+          <div class="timeline-dot"></div>
+          <time>July 2026 - Present</time>
+          <h3>Chetu Training</h3>
+          <p class="company">DevOps training</p>
+          <p>Learning professional engineering discipline around delivery, collaboration, and production-minded software practices.</p>
+        </article>
+        <article class="experience-item reveal">
+          <div class="timeline-dot"></div>
+          <time>Jan 2026 - Mar 2026</time>
+          <h3>System & Software Security Intern</h3>
+          <p class="company">NIELIT, Government of India (MeitY)</p>
+          <p>Configured Snort, deployed Cowrie honeypots, and performed Nmap-based assessment for security monitoring and attack surface discovery.</p>
+        </article>
+        <article class="experience-item reveal">
+          <div class="timeline-dot"></div>
+          <time>Aug 2025</time>
+          <h3>Visual Designer Intern</h3>
+          <p class="company">InAmigos Foundation</p>
+          <p>Created campaign posters, visual systems, and social creatives with consistent layout, typography, and brand communication.</p>
+        </article>
+        <article class="experience-item reveal">
+          <div class="timeline-dot"></div>
+          <time>Jun 2025</time>
+          <h3>Python Developer Intern</h3>
+          <p class="company">Coding Samurai</p>
+          <p>Built Python applications, API workflows, and Tkinter utilities with debugging, documentation, and practical project delivery.</p>
+        </article>
+      </div>
+    </section>
 
-    <a href="certificates/microsoft.jpeg" target="_blank" class="cert-card">
-      <img src="certificates/microsoft.jpeg" alt="Power BI Certificate">
-    </a>
-    <a href="certificates/nptel.jpeg" target="_blank" class="cert-card">
-      <img src="certificates/nptel.jpeg" alt="Python for Data Science Certificate">
-    </a>
+    <section class="section-shell skills-section" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Skills</p>
+        <h2>Technical Capability</h2>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-group reveal tilt-card">
+          <h3>Languages</h3>
+          <div class="skill-list">
+            <span>Python</span><span>Java</span><span>SQL</span><span>JavaScript</span><span>C</span>
+          </div>
+        </article>
+        <article class="skill-group reveal tilt-card">
+          <h3>Cyber Security</h3>
+          <div class="skill-list">
+            <span>Snort</span><span>Cowrie</span><span>Wazuh</span><span>Nmap</span><span>Wireshark</span><span>Linux</span>
+          </div>
+        </article>
+        <article class="skill-group reveal tilt-card">
+          <h3>AI</h3>
+          <div class="skill-list">
+            <span>LLM</span><span>Gemini</span><span>LangChain</span><span>Ollama</span><span>Pandas</span><span>Machine Learning</span>
+          </div>
+        </article>
+        <article class="skill-group reveal tilt-card">
+          <h3>Tools</h3>
+          <div class="skill-list">
+            <span>Git</span><span>Docker</span><span>Power BI</span><span>Canva</span><span>Figma</span><span>Cloud</span><span>AWS</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <a href="certificates/google.jpeg" target="_blank" class="cert-card">
-      <img src="certificates/google.jpeg" alt="Crash Course on Python Certificate">
-    </a>
-
-    <a href="certificates/deloitte.jpeg" target="_blank" class="cert-card">
-      <img src="certificates/deloitte.jpeg" alt="Deloitte Forage Certificate">
-    </a>
-
-    <a href="certificates/skillindia.jpeg" target="_blank" class="cert-card">
-      <img src="certificates/skillindia.jpeg" alt="Web Design Certificate">
-    </a>
-
-  </div>
-  <p class="hint">Click the top card to view all certificates</p>
-</section>
-
-
-  <!-- POSTERS -->
-  <section id="posters" class="section dark">
-    <h2>Poster Designs</h2>
-    <p class="section-text" style="margin-bottom: 40px;">
-      Creative visual designs that combine aesthetics with communication. Each poster tells a story through typography, color, and composition.
-    </p>
-
-    <!-- Image Lightbox Modal -->
-    <div class="lightbox-modal" id="lightboxModal">
-      <span class="lightbox-close">&times;</span>
-      <img class="lightbox-image" id="lightboxImage" src="" alt="Poster">
-      <div class="lightbox-caption" id="lightboxCaption"></div>
-    </div>
-
-    <div class="posters-carousel-container">
-      <div class="posters-carousel">
-        <div class="poster-card">
-          <div class="poster-image">
-            <img src="images/posters/p2.jpeg" alt="NGISE IEEE Event" class="poster-img" data-src="images/posters/p2.jpeg" data-caption="NGISE IEEE Event">
-            <div class="poster-overlay">
-              <span class="view-full">Click to View Full Size</span>
+    <section class="section-shell featured-section" id="featured">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Featured Project</p>
+        <h2>Cyber Sentinel</h2>
+      </div>
+      <div class="featured-grid">
+        <div class="featured-visual reveal tilt-card">
+          <div class="sentinel-screen">
+            <div class="screen-top"><span></span><span></span><span></span></div>
+            <div class="alert-row high">
+              🚨 Unauthorized Login Attempt (Event ID 4625)
+            </div>
+            <div class="alert-row medium">
+              🔌 Suspicious USB Device Connected
+            </div>
+            <div class="alert-row low">
+              📍 Incident Uploaded • Mobile Alert Sent
+            </div>
+            <div class="workflow-map">
+              <span>Sentinel Agent</span>
+              <span>FastAPI C2</span>
+              <span>Cloud</span>
+              <span>Flutter App</span>
             </div>
           </div>
-          <div class="poster-info">
-            <h3>NGISE IEEE Event </h3>
-            <p>Designed and Presented poster on NGISE IEEE Event held at AKGEC College,It highlights how technology can improve farming efficiency, reduce resource wastage, increase crop yield, and support sustainable, data-driven agriculture.</p>
-          </div>
         </div>
-
-        <div class="poster-card">
-          <div class="poster-image">
-            <img src="images/posters/p3.jpeg" alt="AECE Event Poster" class="poster-img" data-src="images/posters/p3.jpeg" data-caption="AECE Event Poster">
-            <div class="poster-overlay">
-              <span class="view-full">Click to View Full Size</span>
+        <div class="featured-copy reveal">
+          <p>
+            Cyber Sentinel C2 is a real-time endpoint security and forensic monitoring system developed during my internship at NIELIT (MeitY, Government of India). It continuously monitors Windows login events and USB activity, captures forensic evidence, enriches incidents with geolocation data, and instantly delivers alerts to a mobile application through a cloud-based Command & Control (C2) infrastructure.
+          </p>
+          <div class="architecture">
+            <h3>Architecture</h3>
+            <p>
+              Windows Sentinel Agent → FastAPI C2 Bridge → Render Cloud Backend → Flutter Mobile Dashboard → Real-Time Tactical Alerts
+            </p>
+          </div>
+          <div class="workflow">
+            <h3>Workflow</h3>
+            <p>
+              Monitor Windows security events → Detect login or USB activity → Capture forensic image → Collect IP & Geo-location → Upload securely to cloud → Notify owner through mobile dashboard
+            </p>
+          </div>
+          <div class="feature-chips">
+            <span>Real-Time Login Monitoring</span>
+            <span>USB Threat Detection</span>
+            <span>Stealth Image Capture</span>
+            <span>Geo-Location Intelligence</span>
+            <span>Flutter Mobile Alerts</span>
+            <span>FastAPI C2 Server</span>
+            <span>Multithreaded Python Agent</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary" href="https://github.com/abhim1411" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn secondary" href="#contact">Project Overview</a>
+          </div>
+          <div class="project-metrics">
+            <div>
+              <h4>Tech Stack</h4>
+              <p>Python • FastAPI • Flutter • OpenCV • WMI • Windows Event Logs • Render</p>
             </div>
-          </div>
-          <div class="poster-info">
-            <h3>AECE Event Poster</h3>
-            <p>Eye-catching event poster with dynamic layout and engaging visuals. Designed to communicate event details effectively while maintaining visual appeal.</p>
-          </div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-image">
-            <img src="images/posters/p1.jpeg" alt="Adobe Campus Competition" class="poster-img" data-src="images/posters/p1.jpeg" data-caption="Adobe Campus Competition">
-            <div class="poster-overlay">
-              <span class="view-full">Click to View Full Size</span>
+            <div>
+              <h4>Highlights</h4>
+              <p>Real-time monitoring • Multithreading • Cloud synchronization • Mobile notifications • Digital forensics</p>
             </div>
-          </div>
-          <div class="poster-info">
-            <h3>Adobe Campus Competition</h3>
-            <p>Designed for Competition of Adobe Campus Ambassdor,It inspires individuals—especially students—to trust their decisions, embrace independence, and confidently shape their future without fear or limitations.</p>
-          </div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-image">
-            <img src="images/posters/p5.jpeg" alt="Recruitment Poster" class="poster-img" data-src="images/posters/p5.jpeg" data-caption="Recruitment Poster">
-            <div class="poster-overlay">
-              <span class="view-full">Click to View Full Size</span>
-            </div>
-          </div>
-          <div class="poster-info">
-            <h3>Recruitment Poster</h3>
-            <p>This poster announces recruitment for creative roles such as poster designing, video editing, and illustration.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TRAVEL HOBBY -->
-  <section id="travel" class="section">
-    <div class="airplane-container">
-      <svg class="airplane" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-        <!-- Main body -->
-        <ellipse cx="50" cy="40" rx="45" ry="8" fill="#22d3ee" opacity="0.95"/>
-        <!-- Nose -->
-        <path d="M5 40 L25 35 L25 45 Z" fill="#22d3ee" opacity="0.95"/>
-        <!-- Cockpit -->
-        <circle cx="30" cy="40" r="5" fill="#0f172a"/>
-        <!-- Wings -->
-        <ellipse cx="50" cy="40" rx="35" ry="25" fill="none" stroke="#6366f1" stroke-width="3" opacity="0.8"/>
-        <!-- Tail -->
-        <path d="M85 40 L105 30 L105 35 L90 40 Z" fill="#6366f1" opacity="0.8"/>
-        <path d="M85 40 L105 50 L105 45 L90 40 Z" fill="#6366f1" opacity="0.8"/>
-        <!-- Engine/wing details -->
-        <circle cx="60" cy="30" r="4" fill="#22d3ee" opacity="0.7"/>
-        <circle cx="60" cy="50" r="4" fill="#22d3ee" opacity="0.7"/>
-      </svg>
-    </div>
-    <h2>My Travel Adventures</h2>
-    <p class="section-text" style="margin-bottom: 50px;">
-      Traveling is more than a hobby—it's a passion that fuels creativity and provides fresh perspectives. 
-      Exploring new places, cultures, and landscapes inspires my work and enriches my life experiences.
-    </p>
-
-    <div class="travel-content">
-      <div class="travel-text">
-        <h3>Journey Through Cultures</h3>
-        <p>
-          From bustling city streets to serene mountain landscapes, each journey brings new inspiration. 
-          Traveling has taught me to appreciate diverse perspectives and find beauty in unexpected places. 
-          These experiences translate into my design work, bringing authenticity and global awareness to every project.
-        </p>
-        <p>
-          Whether it's capturing the architectural beauty of historic cities or experiencing local traditions, 
-          these adventures shape my creative vision and problem-solving approach.
-        </p>
-        <div class="travel-highlights">
-          <div class="highlight-item">
-            <span class="highlight-icon">🗺️</span>
-            <span>Exploring new destinations</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">📸</span>
-            <span>Capturing moments</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">🌍</span>
-            <span>Cultural immersion</span>
-          </div>
-        </div>
+    <section class="section-shell projects-section" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected Work</h2>
       </div>
-      <div class="travel-images">
-        <div class="travel-image-grid">
-          <img src="images/travel/t1.JPG" alt="Travel Photo 1" class="travel-img">
-          <img src="images/travel/t2.jpg" alt="Travel Photo 2" class="travel-img">
-          <img src="images/travel/t3.jpg" alt="Travel Photo 3" class="travel-img">
-          <img src="images/travel/t4.JPG" alt="Travel Photo 4" class="travel-img">
-        </div>
+      <div class="project-grid">
+        <article class="project-card reveal tilt-card">
+          <div class="project-image security"></div>
+          <h3>SOC Threat Monitoring & SIEM Integration</h3>
+          <p>Mini SOC environment correlating honeypot and IDS events for real-time security monitoring.</p>
+          <div class="badges"><span>Wazuh</span><span>Cowrie</span><span>Snort</span></div>
+          <div class="card-actions"><a href="https://github.com/abhim1411" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#contact">Live Demo</a></div>
+        </article>
+        <article class="project-card reveal tilt-card">
+          <div class="project-image ai"></div>
+          <h3>AI-Powered Data Analysis Chatbot</h3>
+          <p>CSV and Excel analysis assistant using Pandas context and a local Ollama LLM workflow.</p>
+          <div class="badges"><span>Django</span><span>Python</span><span>Ollama</span></div>
+          <div class="card-actions"><a href="https://github.com/abhim1411" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#contact">Live Demo</a></div>
+        </article>
+        <article class="project-card reveal tilt-card">
+          <div class="project-image network"></div>
+          <h3>Network Forensics & DoS Analysis</h3>
+          <p>Packet-level analysis of SYN flood behavior, protocol evidence, and investigation notes.</p>
+          <div class="badges"><span>Wireshark</span><span>TCP/IP</span><span>Forensics</span></div>
+          <div class="card-actions"><a href="https://github.com/abhim1411" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#contact">Live Demo</a></div>
+        </article>
+        <article class="project-card reveal tilt-card">
+          <div class="project-image weather"></div>
+          <h3>Weather Intelligence App</h3>
+          <p>Python API app with reliable JSON parsing, city lookup, and readable weather insights.</p>
+          <div class="badges"><span>Python</span><span>REST API</span><span>JSON</span></div>
+          <div class="card-actions"><a href="https://github.com/abhim1411/CODING-SAMURAI-INTERNSHIP-TASK/tree/main/Task%201" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#contact">Live Demo</a></div>
+        </article>
       </div>
+    </section>
+
+    <section class="section-shell cert-section" id="certifications">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Certifications</p>
+        <h2>Credential Stack</h2>
+      </div>
+      <div class="cert-filters reveal" aria-label="Certification filters">
+        <button class="filter-btn active" type="button" data-filter="all">All</button>
+        <button class="filter-btn" type="button" data-filter="Course">Course</button>
+        <button class="filter-btn" type="button" data-filter="Internship">Internship</button>
+      </div>
+      <div class="cert-stack">
+        <button class="cert-card reveal" type="button" data-category="Course" data-full="assets/certificates/microsoft.jpeg">
+          <img src="assets/certificates/microsoft.jpeg" alt="Microsoft Power BI certificate" loading="lazy">
+        </button>
+        <button class="cert-card reveal" type="button" data-category="Course" data-full="assets/certificates/nptel.jpeg">
+          <img src="assets/certificates/nptel.jpeg" alt="NPTEL Python for Data Science certificate" loading="lazy">
+        </button>
+        <button class="cert-card reveal" type="button" data-category="Course" data-full="assets/certificates/google.jpeg">
+          <img src="assets/certificates/google.jpeg" alt="Google Python certificate" loading="lazy">
+        </button>
+        <button class="cert-card reveal" type="button" data-category="Course" data-full="assets/certificates/deloitte.jpeg">
+          <img src="assets/certificates/deloitte.jpeg" alt="Deloitte certification" loading="lazy">
+        </button>
+        <button class="cert-card reveal" type="button" data-category="Course" data-full="assets/certificates/skillindia.jpeg">
+          <img src="assets/certificates/skillindia.jpeg" alt="Skill India certificate" loading="lazy">
+        </button>
+        <button class="cert-card reveal" type="button" data-category="Internship" data-full="assets/images/nielit.png">
+          <img src="assets/images/nielit.png" alt="Nielit certificate" loading="lazy">
+        </button>
+        <button class="cert-card reveal" type="button" data-category="Internship" data-full="assets/images/iaminternship.jpeg">
+          <img src="assets/images/iaminternship.jpeg" alt="Inamigos Foundation" loading="lazy">
+        </button>
+        <button class="cert-card reveal" type="button" data-category="Internship" data-full="assets/images/csinternship.jpeg">
+          <img src="assets/images/csinternship.jpeg" alt="Coding Samurai certificate" loading="lazy">
+        </button>
+      </div>
+    </section>
+
+    <section class="section-shell contact-section" id="contact">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Start a Conversation</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card glass reveal tilt-card">
+          <h3>Connect</h3>
+          <a href="mailto:mishraabhijeet122@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/abhijeet-mishra-316954267/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/abhim1411" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:mishraabhijeet122@gmail.com?subject=WhatsApp%20number%20request">WhatsApp</a>
+          <a href="abhijeet_resume.pdf" download>Resume</a>
+        </div>
+        <form class="contact-form glass reveal" id="contactForm">
+          <input type="text" id="contactName" name="name" placeholder="Your name" required>
+          <input type="email" id="contactEmail" name="email" placeholder="Your email" required>
+          <textarea id="contactMessage" name="message" placeholder="Your message" required></textarea>
+          <button class="btn primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <a href="#hero">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section dark">
-    <h2>Contact Me</h2>
-
-    <form class="contact-form" id="contactForm">
-      <input type="text" id="contactName" name="name" placeholder="Your Name" required>
-      <input type="email" id="contactEmail" name="email" placeholder="Your Email" required>
-      <textarea id="contactMessage" name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn primary">Send Message</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Abhijeet Mishra. All rights reserved.</p>
-    <a href="https://www.linkedin.com/in/abhijeet-mishra-316954267/" target="_blank" rel="noopener noreferrer">
-      <img src="images/logos/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 32px;height: 32px;">
-    </a>
+    <p>Copyright (c) 2026 Abhijeet Mishra. All rights reserved.</p>
+    <a class="back-top" href="#hero" aria-label="Back to top">Top</a>
   </footer>
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-  <script>
-    emailjs.init("4g4gYl-qgDYi7ZyJL");
-  </script>
-  <script src="script.js"></script>
+  <dialog class="cert-modal" id="certModal">
+    <button type="button" class="modal-close" aria-label="Close certificate">x</button>
+    <img src="" alt="Expanded certificate preview">
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
