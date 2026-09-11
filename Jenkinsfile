@@ -21,7 +21,7 @@ pipeline {
 
                 sh '''
                     sudo rm -rf /var/www/html/*
-                    sudo cp -r ./* /var/www/html/
+                    sudo cp -r "$WORKSPACE"/index.html "$WORKSPACE"/assets "$WORKSPACE"/css "$WORKSPACE"/js "$WORKSPACE"/abhijeet_resume.pdf /var/www/html/
                 '''
             }
         }
