@@ -1,8 +1,5 @@
-const root = document.documentElement;
 const loader = document.querySelector(".loader");
 const progress = document.querySelector(".scroll-progress");
-const cursorGlow = document.querySelector(".cursor-glow");
-const spotlight = document.querySelector(".mouse-spotlight");
 const navLinks = document.querySelector(".nav-links");
 const menuToggle = document.querySelector(".menu-toggle");
 const sections = [...document.querySelectorAll("main section[id]")];
@@ -28,42 +25,6 @@ menuToggle?.addEventListener("click", () => {
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   document.body.classList.toggle("nav-open", isOpen);
 });
-
-const roles = ["Cybersecurity Engineer", "Python Developer", "AI Enthusiast", "SOC Analyst", "DevOps Engineer"];
-const typingTarget = document.querySelector(".typing-text");
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function typeRole() {
-  if (!typingTarget) return;
-  const role = roles[roleIndex];
-  typingTarget.textContent = role.slice(0, charIndex);
-
-  if (!deleting && charIndex < role.length) {
-    charIndex += 1;
-    setTimeout(typeRole, 72);
-    return;
-  }
-
-  if (!deleting && charIndex === role.length) {
-    deleting = true;
-    setTimeout(typeRole, 1200);
-    return;
-  }
-
-  if (deleting && charIndex > 0) {
-    charIndex -= 1;
-    setTimeout(typeRole, 34);
-    return;
-  }
-
-  deleting = false;
-  roleIndex = (roleIndex + 1) % roles.length;
-  setTimeout(typeRole, 280);
-}
-
-typeRole();
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -122,52 +83,6 @@ function updateScrollState() {
 window.addEventListener("scroll", updateScrollState, { passive: true });
 updateScrollState();
 
-document.querySelectorAll(".theme-swatch").forEach((button) => {
-  button.addEventListener("click", () => {
-    root.dataset.theme = button.dataset.theme;
-    document.querySelectorAll(".theme-swatch").forEach((swatch) => swatch.classList.remove("active"));
-    button.classList.add("active");
-  });
-});
-
-document.querySelector(".dark-toggle")?.addEventListener("click", () => {
-  root.dataset.mode = root.dataset.mode === "light" ? "dark" : "light";
-});
-
-const finePointer = window.matchMedia("(pointer: fine)").matches;
-
-if (finePointer) {
-  window.addEventListener("mousemove", (event) => {
-    const x = `${event.clientX}px`;
-    const y = `${event.clientY}px`;
-    if (cursorGlow) {
-      cursorGlow.style.opacity = "1";
-      cursorGlow.style.left = x;
-      cursorGlow.style.top = y;
-    }
-    if (spotlight) {
-      spotlight.style.opacity = "1";
-      spotlight.style.setProperty("--mx", x);
-      spotlight.style.setProperty("--my", y);
-    }
-  });
-
-  document.querySelectorAll(".tilt-card").forEach((card) => {
-    card.addEventListener("mousemove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const rotateX = ((y / rect.height) - 0.5) * -8;
-      const rotateY = ((x / rect.width) - 0.5) * 8;
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "";
-    });
-  });
-}
-
 const graph = document.querySelector(".contribution-graph");
 if (graph) {
   for (let index = 0; index < 126; index += 1) {
@@ -199,6 +114,7 @@ const certModalImage = certModal?.querySelector("img");
 
 certCards.forEach((card) => {
   card.addEventListener("click", () => {
+    if (card.tagName === "A") return;
     if (!certModal || !certModalImage) return;
     certModalImage.src = card.dataset.full;
     certModalImage.alt = card.querySelector("img")?.alt || "Certificate preview";
@@ -266,76 +182,3 @@ contactForm?.addEventListener("submit", (event) => {
   }, 1200);
 });
 
-const canvas = document.getElementById("particleCanvas");
-const ctx = canvas?.getContext("2d");
-const particles = [];
-let animationFrame;
-
-function resizeCanvas() {
-  if (!canvas) return;
-  canvas.width = window.innerWidth * window.devicePixelRatio;
-  canvas.height = window.innerHeight * window.devicePixelRatio;
-  canvas.style.width = `${window.innerWidth}px`;
-  canvas.style.height = `${window.innerHeight}px`;
-  ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
-}
-
-function createParticles() {
-  particles.length = 0;
-  const count = Math.min(90, Math.floor(window.innerWidth / 18));
-  for (let index = 0; index < count; index += 1) {
-    particles.push({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.5) * 0.45,
-      vy: (Math.random() - 0.5) * 0.45,
-      size: Math.random() * 2 + 0.6,
-    });
-  }
-}
-
-function drawParticles() {
-  if (!ctx || !canvas) return;
-  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  particles.forEach((particle, index) => {
-    particle.x += particle.vx;
-    particle.y += particle.vy;
-
-    if (particle.x < 0 || particle.x > window.innerWidth) particle.vx *= -1;
-    if (particle.y < 0 || particle.y > window.innerHeight) particle.vy *= -1;
-
-    ctx.beginPath();
-    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0, 245, 255, 0.62)";
-    ctx.fill();
-
-    for (let next = index + 1; next < particles.length; next += 1) {
-      const other = particles[next];
-      const dx = particle.x - other.x;
-      const dy = particle.y - other.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      if (distance < 115) {
-        ctx.strokeStyle = `rgba(123, 97, 255, ${0.16 * (1 - distance / 115)})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(particle.x, particle.y);
-        ctx.lineTo(other.x, other.y);
-        ctx.stroke();
-      }
-    }
-  });
-
-  animationFrame = requestAnimationFrame(drawParticles);
-}
-
-if (canvas && ctx && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  resizeCanvas();
-  createParticles();
-  drawParticles();
-  window.addEventListener("resize", () => {
-    cancelAnimationFrame(animationFrame);
-    resizeCanvas();
-    createParticles();
-    drawParticles();
-  });
-}
